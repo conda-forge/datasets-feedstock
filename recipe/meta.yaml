@@ -41,8 +41,6 @@ requirements:
 test:
   imports:
     - datasets
-    - datasets.commands
-    - datasets.utils
   commands:
     - pip check
     - datasets-cli --help
