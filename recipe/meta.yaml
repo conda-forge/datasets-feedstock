@@ -1,5 +1,5 @@
 {% set name = "datasets" %}
-{% set version = "3.0.1" %}
+{% set version = "3.0.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 40d63b09e76a3066c32e746d6fdc36fd3f29ed2acd49bf5b1a2100da32936511
+  sha256: 07204c389ce0491ef3ad50dd79966d3fd40422a12b831cf84a117323ac74fbc1
 
 build:
   noarch: python
@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8.0
+    - python >=3.8
     - setuptools
   run:
-    - python >=3.8.0
+    - python >=3.8
     - filelock
     - numpy >=1.17
     - pyarrow >=15.0.0
@@ -32,9 +32,9 @@ requirements:
     - requests >=2.32.2
     - tqdm >=4.66.3
     - python-xxhash
-    - multiprocess
-    - fsspec >=2023.1.0,<=2024.6.1
-    - huggingface_hub >=0.22.0
+    - multiprocess <0.70.17
+    - fsspec >=2023.1.0,<=2024.9.0
+    - huggingface_hub >=0.23.0
     - packaging
     - pyyaml >=5.1
     # For fsspec[http]
