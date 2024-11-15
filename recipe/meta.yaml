@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - filelock
     - numpy >=1.17
     - pyarrow >=15.0.0
@@ -48,6 +48,7 @@ test:
     - datasets-cli --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/huggingface/datasets
