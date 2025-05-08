@@ -1,5 +1,5 @@
 {% set name = "datasets" %}
-{% set version = "3.5.0" %}
+{% set version = "3.6.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9e39560e34f83a64e48ceca7adeb645ede3c3055c5cf48ed2b454f8ed2b89754
+  sha256: 1b2bf43b19776e2787e181cfd329cb0ca1a358ea014780c3581e0f276375e041
 
 build:
   noarch: python
