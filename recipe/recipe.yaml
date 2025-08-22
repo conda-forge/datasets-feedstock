@@ -1,29 +1,32 @@
-{% set name = "datasets" %}
-{% set version = "4.0.0" %}
+schema_version: 1
 
+context:
+  name: datasets
+  version: 4.0.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: 9657e7140a9050db13443ba21cb5de185af8af944479b00e7ff1e00a61c8dbf1
 
 build:
-  noarch: python
   number: 0
-  entry_points:
-    - datasets-cli=datasets.commands.datasets_cli:main
-  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - datasets-cli=datasets.commands.datasets_cli:main
 
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - setuptools
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - filelock
     - numpy >=1.17
     - pyarrow >=15.0.0
@@ -40,20 +43,20 @@ requirements:
     # For fsspec[http]
     - aiohttp
 
-test:
-  imports:
-    - datasets
-  commands:
-    - pip check
-    - datasets-cli --help
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - datasets
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - datasets-cli --help
 
 about:
-  home: https://github.com/huggingface/datasets
   license: Apache-2.0
-  license_family: Apache
   license_file: LICENSE
   summary: HuggingFace/Datasets is an open library of NLP datasets.
   description: |
@@ -64,8 +67,9 @@ about:
     (Numpy/Pandas/PyTorch/TensorFlow/JAX). Datasets also provide an API for
     simple, fast, and reproducible data pre-processing for the above public
     datasets as well as your own local datasets in CSV/JSON/text.
-  doc_url: https://huggingface.co/docs/datasets/
-  dev_url: https://github.com/huggingface/datasets
+  homepage: https://github.com/huggingface/datasets
+  repository: https://github.com/huggingface/datasets
+  documentation: https://huggingface.co/docs/datasets/
 
 extra:
   recipe-maintainers:
