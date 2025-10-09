@@ -33,11 +33,12 @@ requirements:
     - dill >=0.3.0,<0.4.1
     - pandas
     - requests >=2.32.2
+    - httpx <1.0.0
     - tqdm >=4.66.3
     - python-xxhash
     - multiprocess <0.70.17
     - fsspec >=2023.1.0,<=2025.9.0
-    - huggingface_hub >=0.24.0
+    - huggingface_hub >=0.25.0,<2.0
     - packaging
     - pyyaml >=5.1
     # For fsspec[http]
