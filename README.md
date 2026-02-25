@@ -160,6 +160,3 @@ Feedstock Maintainers
 * [@oblute](https://github.com/oblute/)
 * [@thewchan](https://github.com/thewchan/)
 
-
-<!-- dummy commit to enable rerendering -->
-
