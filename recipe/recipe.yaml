@@ -37,7 +37,7 @@ requirements:
     - tqdm >=4.66.3
     - python-xxhash
     - multiprocess <0.70.19
-    - fsspec >=2023.1.0,<=2025.10.0
+    - fsspec >=2023.1.0,<=2026.2.0
     - huggingface_hub >=0.25.0,<2.0
     - packaging
     - pyyaml >=5.1
