@@ -55,7 +55,6 @@ tests:
   - requirements:
       run:
         - python ${{ python_min }}.*
-        - "*"
     script:
       - datasets-cli --help
 
