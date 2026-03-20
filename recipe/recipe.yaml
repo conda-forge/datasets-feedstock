@@ -30,13 +30,13 @@ requirements:
     - filelock
     - numpy >=1.17
     - pyarrow >=21.0.0
-    - dill >=0.3.0,<0.4.1
+    - dill >=0.3.0,<0.4.2
     - pandas
     - requests >=2.32.2
     - httpx <1.0.0
     - tqdm >=4.66.3
     - python-xxhash
-    - multiprocess <0.70.19
+    - multiprocess <0.70.20
     - fsspec >=2023.1.0,<=2026.2.0
     - huggingface_hub >=0.25.0,<2.0
     - packaging
@@ -49,7 +49,9 @@ tests:
       imports:
         - datasets
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
