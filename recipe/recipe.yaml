@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: datasets
-  version: "4.8.3"
+  version: "4.8.4"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 882fb1bb514772bec17fbcad2e32985893954d0a0ecf42266e5091386be1f3b7
+  sha256: a1429ed853275ce7943a01c6d2e25475b4501eb758934362106a280470df3a52
 
 build:
   number: 0
