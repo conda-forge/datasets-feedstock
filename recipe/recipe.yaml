@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: datasets
-  version: "5.1.0"
+  version: "5.2.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 1561347daa8841b51351ef2ad1647b4ee4af406852c0f7bd1df587ac1ca7888e
+  sha256: f4290d4704dfbc99631a578b56912d66b22def53d3f61d246f6ccc129675490e
 
 build:
   number: 0
@@ -35,7 +35,7 @@ requirements:
     - tqdm >=4.66.3
     - python-xxhash
     - multiprocess <0.70.20
-    - fsspec >=2023.1.0,<=2026.7.0
+    - fsspec >=2023.1.0,<=2026.9.0
     - huggingface_hub >=1.31.0,<3.0
     - packaging
     - pyyaml >=5.1
